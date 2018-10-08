@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'typeface-roboto';
 
 class App extends Component {
 
@@ -37,13 +38,10 @@ class App extends Component {
   }
 
   bitflip (value, index) {
-    //var mask = createmask();
-    //var bitvalue = Number(value).toString(2);
+    var mask = this.createmask(index);
+    var newval = value ^ mask;
 
-    //var newval = bitvalue ^ mask;
-    //var newvalstring = newval.toString(2);
-
-    return 0;
+    return newval;
 
   }
   
@@ -55,7 +53,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Bitflipper</h1>
         </header>
-        <h2>Computersystmer 2018-2019</h2>
+        <h2>Computersystemer 2018-2019</h2>
 
 
         <form onSubmit={this.handleSubmit}>
@@ -73,7 +71,6 @@ class App extends Component {
         <label>Index of bit</label>
               <input 
                 type="number" 
-                placeholder='1'
                 value={this.state.inputvalue2} 
                 onChange={(event) => this.handleChange(event, "inputvalue2")}
               />
@@ -91,8 +88,17 @@ class App extends Component {
         <br></br>
         <par><b>{Number(this.createmask(this.state.inputvalue2)).toString(2)}</b></par>
 
-        <h4>bittest: {this.bitflip(this.state.inputvalue1, this.state.inputvalue2)}</h4>
+        <br></br><br></br>
+
+        <par>The new number in base<sub>10</sub>:</par>
+        <br></br>
+        <par><b>{this.bitflip(this.state.inputvalue1, this.state.inputvalue2)}</b></par>
         
+        <br></br><br></br>
+
+        <par>The new number in base<sub>2</sub>:</par>
+        <br></br>
+        <par><b>{Number(this.bitflip(this.state.inputvalue1, this.state.inputvalue2)).toString(2)}</b></par>
 
 
       </div>
