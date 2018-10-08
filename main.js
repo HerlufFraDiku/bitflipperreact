@@ -1,5 +1,6 @@
 // Basic init
 const electron = require('electron')
+Int64 = require('node-int64')
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');

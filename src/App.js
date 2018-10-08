@@ -21,15 +21,31 @@ class App extends Component {
   }
   
   handleSubmit (event) {
-
     console.log( this.state.inputvalue1 + this.state.inputvalue2 )
     event.preventDefault();
   }
 
   adder (p1, p2) {
-    return p1 + p2;
+    return Number(p1) + Number(p2);
   }
 
+  createmask (index) {
+    if (index > 0)
+    var mask = 0x01 << index-1
+    else return "0";
+    return mask;
+  }
+
+  bitflip (value, index) {
+    //var mask = createmask();
+    //var bitvalue = Number(value).toString(2);
+
+    //var newval = bitvalue ^ mask;
+    //var newvalstring = newval.toString(2);
+
+    return 0;
+
+  }
   
 
   render() {
@@ -37,15 +53,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Bitflipper</h1>
         </header>
-        <p className="App-intro">
-          Tak, based Herluf.
-        </p>
+        <h2>Computersystmer 2018-2019</h2>
 
 
         <form onSubmit={this.handleSubmit}>
-              <label>First integer</label>
+              <label>Number bitflip</label>
               <input 
                 type="number" 
                 value={this.state.inputvalue1} 
@@ -56,23 +70,28 @@ class App extends Component {
 
 
         <form onSubmit={this.handleSubmit}>
-        <label>Second integer</label>
+        <label>Index of bit</label>
               <input 
                 type="number" 
+                placeholder='1'
                 value={this.state.inputvalue2} 
                 onChange={(event) => this.handleChange(event, "inputvalue2")}
               />
-              <br></br>
-
-              <input type="submit" value="Submit"/>
         </form>
-
-        <h4>The first number is {this.state.inputvalue1} and the second, {this.state.inputvalue2}.</h4>
 
         <br></br>
 
-        <h4>The result of adding the two numbers will be {this.adder(inputvalue1, inputvalue2}</h4>
+        <par>Base<sub>2</sub> representation of of base<sub>10</sub> input:</par>
+        <br></br>
+        <par><b>{Number(this.state.inputvalue1).toString(2)}</b></par>
 
+        <br></br><br></br>
+        
+        <par>Mask to be used to bitflip:</par>
+        <br></br>
+        <par><b>{Number(this.createmask(this.state.inputvalue2)).toString(2)}</b></par>
+
+        <h4>bittest: {this.bitflip(this.state.inputvalue1, this.state.inputvalue2)}</h4>
         
 
 
