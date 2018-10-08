@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'typeface-roboto';
+
 
 class App extends Component {
 
@@ -100,6 +102,7 @@ class App extends Component {
         <par><b>{Number(this.bitflip(this.state.inputvalue1, this.state.inputvalue2)).toString(2)}</b></par>
 
     </div>     
+
 
     );
   }
