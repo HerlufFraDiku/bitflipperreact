@@ -14,9 +14,9 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-  handleChange (event, inputvalue) {
+  handleChange (event, valueName) {
     this.setState({
-        [inputvalue] : event.target.value,
+        [valueName] : event.target.value,
     })
   }
   
