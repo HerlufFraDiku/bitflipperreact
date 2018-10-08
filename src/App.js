@@ -7,7 +7,8 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        inputvalue: ''
+        inputvalue1: '',
+        inputvalue2: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,19 +16,17 @@ class App extends Component {
 
   handleChange (event) {
     this.setState({
-        inputvalue: event.target.value
+        inputvalue1: event.target.value,
+        inputvalue2: event.target.value
     })
   }
   
   handleSubmit (event) {
-    console.log( 'Form Value : ' + this.state.inputvalue )
+
+    console.log( this.state.inputvalue1 + this.state.inputvalue2 )
     event.preventDefault();
   }
 
-  adder (p1, p2) {
-    console.log( this.state.inputvalue + this.state.inputvalue)
-    event.preventDefault();
-  }
   
 
   render() {
@@ -43,10 +42,15 @@ class App extends Component {
 
         <form onSubmit={this.handleSubmit}>
               <label>First integer</label>
-              <input type="text" value={this.state.inputvalue} onChange={this.handleChange}/>
+              <input id="val1" type="number" value={this.state.inputvalue1} onChange={this.handleChange}/>
+              <br></br>
+              <label>Second integer</label>
+              <input id="val2" type="number" value={this.state.inputvalue2} onChange={this.handleChange}/>
+              <br></br>
               <input type="submit" value="Submit"/>
         </form>
 
+        <h4>The result is {this.state.inputvalue1}</h4>
         
 
 
