@@ -14,10 +14,9 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-  handleChange (event) {
+  handleChange (event, inputvalue) {
     this.setState({
-        inputvalue1: event.target.value,
-        inputvalue2: event.target.value
+        [inputvalue] : event.target.value,
     })
   }
   
@@ -42,12 +41,12 @@ class App extends Component {
 
         <form onSubmit={this.handleSubmit}>
               <label>First integer</label>
-              <input name="inputvalue1" type="number" value={this.state.inputvalue1} onChange={this.handleChange}/>
+              <input type="number" value={this.state.inputvalue1} onChange={this.handleChange(event, "inputvalue1")}/>
               <br></br>
         </form>
         <form onSubmit={this.handleSubmit}>
         <label>Second integer</label>
-              <input name="inputvalue2" type="number" value={this.state.inputvalue2} onChange={this.handleChange}/>
+              <input name="inputvalue2" type="number" value={this.state.inputvalue2} onChange={this.handleChange(event, inputvalue2)}/>
               <br></br>
               <input type="submit" value="Submit"/>
         </form>
