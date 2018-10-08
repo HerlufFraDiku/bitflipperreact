@@ -26,6 +26,10 @@ class App extends Component {
     event.preventDefault();
   }
 
+  adder (p1, p2) {
+    return p1 + p2;
+  }
+
   
 
   render() {
@@ -39,19 +43,36 @@ class App extends Component {
           Tak, based Herluf.
         </p>
 
+
         <form onSubmit={this.handleSubmit}>
               <label>First integer</label>
-              <input type="number" value={this.state.inputvalue1} onChange={this.handleChange(event, "inputvalue1")}/>
+              <input 
+                type="number" 
+                value={this.state.inputvalue1} 
+                onChange={(event) => this.handleChange(event, "inputvalue1")}
+                />
               <br></br>
         </form>
+
+
         <form onSubmit={this.handleSubmit}>
         <label>Second integer</label>
-              <input type="number" value={this.state.inputvalue2} onChange={this.handleChange(event, "inputvalue2")}/>
+              <input 
+                type="number" 
+                value={this.state.inputvalue2} 
+                onChange={(event) => this.handleChange(event, "inputvalue2")}
+              />
               <br></br>
+
               <input type="submit" value="Submit"/>
         </form>
 
-        <h4>The result is {this.state.inputvalue1} and {this.state.inputvalue2}</h4>
+        <h4>The first number is {this.state.inputvalue1} and the second, {this.state.inputvalue2}.</h4>
+
+        <br></br>
+
+        <h4>The result of adding the two numbers will be {this.adder(inputvalue1, inputvalue2}</h4>
+
         
 
 
