@@ -42,15 +42,17 @@ class App extends Component {
 
         <form onSubmit={this.handleSubmit}>
               <label>First integer</label>
-              <input id="val1" type="number" value={this.state.inputvalue1} onChange={this.handleChange}/>
+              <input name="inputvalue1" type="number" value={this.state.inputvalue1} onChange={this.handleChange}/>
               <br></br>
-              <label>Second integer</label>
-              <input id="val2" type="number" value={this.state.inputvalue2} onChange={this.handleChange}/>
+        </form>
+        <form onSubmit={this.handleSubmit}>
+        <label>Second integer</label>
+              <input name="inputvalue2" type="number" value={this.state.inputvalue2} onChange={this.handleChange}/>
               <br></br>
               <input type="submit" value="Submit"/>
         </form>
 
-        <h4>The result is {this.state.inputvalue1}</h4>
+        <h4>The result is {this.state.inputvalue1} and {this.state.inputvalue2}</h4>
         
 
 
