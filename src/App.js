@@ -46,7 +46,7 @@ class App extends Component {
         </form>
         <form onSubmit={this.handleSubmit}>
         <label>Second integer</label>
-              <input name="inputvalue2" type="number" value={this.state.inputvalue2} onChange={this.handleChange(event, inputvalue2)}/>
+              <input name="inputvalue2" type="number" value={this.state.inputvalue2} onChange={this.handleChange(event, "inputvalue2")}/>
               <br></br>
               <input type="submit" value="Submit"/>
         </form>
