@@ -2,9 +2,35 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'typeface-roboto';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+  dense: {
+    marginTop: 16,
+  },
+  menu: {
+    width: 200,
+  },
+});
+
+
 
 
 class App extends Component {
+
+  
 
   constructor (props) {
     super(props);
@@ -49,7 +75,9 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="App">
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Bitflipper</h1>
@@ -78,6 +106,7 @@ class App extends Component {
         </form>
 
         <br></br>
+
 
         Base<sub>2</sub> representation of of base<sub>10</sub> input:
         <br></br>
