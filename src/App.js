@@ -49,6 +49,11 @@ class App extends Component {
 
   render() {
     return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Bitflipper</h1>
+        </header>
         <h2>Computersystemer 2018-2019</h2>
 
 
@@ -74,27 +79,27 @@ class App extends Component {
 
         <br></br>
 
-        <par>Base<sub>2</sub> representation of of base<sub>10</sub> input:</par>
+        Base<sub>2</sub> representation of of base<sub>10</sub> input:
         <br></br>
-        <par><b>{Number(this.state.inputvalue1).toString(2)}</b></par>
+        <b>{Number(this.state.inputvalue1).toString(2)}</b>
 
         <br></br><br></br>
         
-        <par>Mask to be used to bitflip:</par>
+        Mask to be used to bitflip:
         <br></br>
-        <par><b>{Number(this.createmask(this.state.inputvalue2)).toString(2)}</b></par>
+        <b>{Number(this.createmask(this.state.inputvalue2)).toString(2)}</b>
 
         <br></br><br></br>
 
-        <par>The new number in base<sub>10</sub>:</par>
+        The new number in base<sub>10</sub>:
         <br></br>
-        <par><b>{this.bitflip(this.state.inputvalue1, this.state.inputvalue2)}</b></par>
+        <b>{this.bitflip(this.state.inputvalue1, this.state.inputvalue2)}</b>
         
         <br></br><br></br>
 
-        <par>The new number in base<sub>2</sub>:</par>
+        The new number in base<sub>2</sub>:
         <br></br>
-        <par><b>{Number(this.bitflip(this.state.inputvalue1, this.state.inputvalue2)).toString(2)}</b></par>
+        <b>{Number(this.bitflip(this.state.inputvalue1, this.state.inputvalue2)).toString(2)}</b>
 
     </div>     
 
